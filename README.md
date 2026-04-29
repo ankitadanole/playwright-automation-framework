@@ -34,3 +34,8 @@ This project demonstrates a robust automation framework for testing web applicat
 ---
 
 ## Project Structure
+
+
+## Sample Report
+
+![Playwright Report](assets/report.png)
