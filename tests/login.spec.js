@@ -20,18 +20,26 @@
 
 //   await expect(page).toHaveURL(/inventory/);
 // });
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { loginData } from '../test-data/loginData';
 
-test('valid login', async ({ page }) => {
-  const loginPage = new LoginPage(page);
+// import { test, expect } from '@playwright/test';
 
-  await loginPage.goto();
-  await loginPage.login(
-    loginData.validUser.username,
-    loginData.validUser.password
-  );
+// import { LoginPage } from '../pages/LoginPage';
+// import { loginData } from '../test-data/loginData';
 
-  await expect(page).toHaveURL(/inventory/);
+// test('valid login', async ({ page }) => {
+//   const loginPage = new LoginPage(page);
+
+//   await loginPage.goto();
+//   await loginPage.login(
+//     loginData.validUser.username,
+//     loginData.validUser.password
+//   );
+
+//   await expect(page).toHaveURL(/inventory/);
+// });
+
+import { test, expect } from '../fixtures/baseTest';
+
+test('verify user lands on inventory page after login', async ({ loggedInPage }) => {
+  await expect(loggedInPage).toHaveURL(/inventory/);
 });
