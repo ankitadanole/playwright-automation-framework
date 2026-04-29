@@ -40,6 +40,9 @@
 
 import { test, expect } from '../fixtures/baseTest';
 
-test('verify user lands on inventory page after login', async ({ loggedInPage }) => {
+// test('verify user lands on inventory page after login', async ({ loggedInPage }) => {
+//   await expect(loggedInPage).toHaveURL(/inventory/);
+// });
+test('@smoke valid login', async ({ loggedInPage }) => {
   await expect(loggedInPage).toHaveURL(/inventory/);
 });

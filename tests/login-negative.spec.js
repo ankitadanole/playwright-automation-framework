@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { loginData } from '../test-data/loginData';
 
-test('invalid login shows error', async ({ page }) => {
+test('@regression invalid login shows error', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.goto();
@@ -13,7 +13,7 @@ test('invalid login shows error', async ({ page }) => {
 
   await expect(page.locator('[data-test="error"]')).toBeVisible();
 });
-test('locked user cannot login', async ({ page }) => {
+test('@regression locked user cannot login', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.goto();
